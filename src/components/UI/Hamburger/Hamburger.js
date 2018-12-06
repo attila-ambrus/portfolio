@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Hamburger = styled.div`
     height: 100%;
@@ -13,15 +13,20 @@ const Bar = styled.div`
     height: 3px;
     background-color: #232528;
     border-radius: 100px;
-    transform: translateY(${props => props.pos === 'top' ? '-2px' : props.pos === 'bottom' ? '2px' : 0})
+    ${props => props.top && css`
+        transform: translateY(-2px);
+    `}
+    ${props => props.bottom && css`
+        transform: translateY(2px);
+    `}
 `
 
 const hamburger = () => {
     return (
         <Hamburger>
-            <Bar pos = "top"/>
+            <Bar top/>
             <Bar />
-            <Bar pos = "bottom"/>
+            <Bar bottom/>
         </Hamburger>
     )
 }
