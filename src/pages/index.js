@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Container from "../components/Container/Container";
 import Nav from '../components/Nav/Nav';
 import Header from "../components/Header/Header";
+import Info from "../components/Info/Info";
 
 const IndexPage = () => (
   <>
@@ -14,6 +15,7 @@ const IndexPage = () => (
         <Nav />
         <Header />
       </Container>
+      <Info />
     </Layout>
   </>
 )
